@@ -1,5 +1,6 @@
 #include <X11/XF86keysym.h>
 
+static const char scratchpadname[] = "notebook";
 /* commands */
 static const char
 	*app_launcher[] = { "application-launcher", NULL },
@@ -16,8 +17,8 @@ static const char
 	*vol_down[] = {"volume", "dec", NULL},
 	*vol_toggle[] = {"volume", "toggle", NULL},
 	*light_up[] = {"/usr/bin/light", "-A", "5", NULL},
-	*light_down[] = {"/usr/bin/light", "-U", "5", NULL}
-	;
+	*light_down[] = {"/usr/bin/light", "-U", "5", NULL},
+	*scratchpadcmd[] = { "termite", "-t", scratchpadname, "-e", "tmux", NULL };
 
 // dunst
 static const char
@@ -84,6 +85,7 @@ static Key keys[] = {
 	{ 0     ,			XF86XK_AudioMute        ,			spawn ,			{.v = vol_toggle}}   ,
 	{ 0     ,			XF86XK_MonBrightnessUp  ,			spawn ,			{.v = light_up}}     ,
 	{ 0     ,			XF86XK_MonBrightnessDown,			spawn ,			{.v = light_down}}   ,
+	{ MODKEY,           XK_minus,  							togglescratch,  {.v = scratchpadcmd}},
 	{ 0                    , XK_Print                , printscr , {.ui = 0}}                              ,
 	{ ControlMask          , XK_Print, printscr , {.ui = ControlMask}}                    ,
 	{ ShiftMask            , XK_Print, printscr , {.ui = ShiftMask}}                      ,
@@ -97,5 +99,6 @@ static Key keys[] = {
 	{ ControlMask       , XK_space, spawn, {.v=dunst_c} }     ,
 	{ MODKEY|ControlMask, XK_space, spawn, {.v=dunst_ca} }    ,
 	{ ControlMask       , XK_grave, spawn, {.v=dunst_pop} }   ,
-	{ MODKEY            , XK_minus, spawn, {.v=dunst_toggle} },
+	{ WINKEY            , XK_minus, spawn, {.v=dunst_toggle} },
+
 };
