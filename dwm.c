@@ -2263,7 +2263,7 @@ printscr(const Arg *arg){
 	/*
 	 ShiftMask starts with S 				i.e. Select
 	 ControlMask starts with C 				i.e. Copy to clipboard
-	 Mod4Mask in WinKey, starts with W 		i.e. current window
+	 WINKEY starts with W 					i.e. current window
 	*/
 
 	char maim[128] = "maim";
@@ -2272,7 +2272,7 @@ printscr(const Arg *arg){
 	if (arg->ui & ShiftMask)
 		strcat(maim, " -s");
 
-	if (arg->ui & Mod4Mask)
+	if (arg->ui & WINKEY)
 		strcat(maim, " -i $(xdotool getactivewindow)");
 
 	if (arg->ui & ControlMask)
