@@ -12,7 +12,7 @@ static const char
 	*special_chars[] = {"special_characters.sh", NULL},
 	*screencast[] = {"toggle.sh","ffmpeg_screencast", NULL},
 	*clipbox[] = {"clipbox", NULL},
-	*vanish[] = {"toggle.sh", "monitor", NULL},
+	*vanish[] = {"toggle.sh", "monitor", "eDP1", NULL},
 	*take_break[] = {"safeeyes", "-t", NULL},
 	*logkeys[] = {"toggle", "logkeys", NULL},
 	*vol_up[] = {"volume", "inc", NULL},
