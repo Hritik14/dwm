@@ -22,6 +22,16 @@ static const char
 	*light_down[] = {"/usr/bin/light", "-U", "5", NULL}
 	;
 
+// dunst
+static const char
+	*dunst_a0[] = {"/usr/bin/dunstctl","action","0", NULL},
+	*dunst_a1[] = {"/usr/bin/dunstctl","action","1", NULL},
+	*dunst_a2[] = {"/usr/bin/dunstctl","action","2", NULL},
+	*dunst_c[] = {"/usr/bin/dunstctl","close",NULL},
+	*dunst_ca[] = {"/usr/bin/dunstctl","close-all", NULL},
+	*dunst_pop[] = {"/usr/bin/dunstctl","history-pop", NULL},
+	*dunst_toggle[] = {"/usr/bin/dunstctl","set-paused","toggle", NULL};
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 
@@ -77,11 +87,18 @@ static Key keys[] = {
 	{ 0     ,			XF86XK_AudioMute        ,			spawn ,			{.v = vol_toggle}}   ,
 	{ 0     ,			XF86XK_MonBrightnessUp  ,			spawn ,			{.v = light_up}}     ,
 	{ 0     ,			XF86XK_MonBrightnessDown,			spawn ,			{.v = light_down}}   ,
-};      
 	{ 0                    , XK_Print                , printscr , {.ui = 0}}                              ,
 	{ ControlMask          , XK_Print, printscr , {.ui = ControlMask}}                    ,
 	{ ShiftMask            , XK_Print, printscr , {.ui = ShiftMask}}                      ,
 	{ ControlMask|ShiftMask, XK_Print, printscr , {.ui = ControlMask|ShiftMask}}          ,
 	{ WINKEY               , XK_Print, printscr , {.ui = WINKEY}}                         ,
 	{ WINKEY|ControlMask   , XK_Print, printscr , {.ui = WINKEY|ShiftMask|ControlMask}}   ,
+		//dunst
+	{ ControlMask       , XK_1    , spawn, {.v=dunst_a0} }    ,
+	{ ControlMask       , XK_2    , spawn, {.v=dunst_a1} }    ,
+	{ ControlMask       , XK_3    , spawn, {.v=dunst_a2} }    ,
+	{ ControlMask       , XK_space, spawn, {.v=dunst_c} }     ,
+	{ MODKEY|ControlMask, XK_space, spawn, {.v=dunst_ca} }    ,
+	{ ControlMask       , XK_grave, spawn, {.v=dunst_pop} }   ,
+	{ MODKEY            , XK_minus, spawn, {.v=dunst_toggle} },
 };
