@@ -2278,7 +2278,7 @@ printscr(const Arg *arg){
 	if (arg->ui & ControlMask)
 		strcat(maim, " | xclip -selection clipboard -t image/png");
 	else
-		strcat(maim, " ~/Pictures/screenshots/$(date +%s).jpg");
+		strcat(maim, " ~/Pictures/screenshots/$(date +%Y%m%d%H%M%S).jpg");
 
 	const Arg sbash = {.v = bash};
 	spawn(&sbash);
