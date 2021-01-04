@@ -189,6 +189,7 @@ static void motionnotify(XEvent *e);
 static void movemouse(const Arg *arg);
 static Client *nexttiled(Client *c);
 static void pop(Client *);
+static void printscr(const Arg *arg);
 static void propertynotify(XEvent *e);
 static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
@@ -2255,6 +2256,32 @@ zoom(const Arg *arg)
 	}
 	focus(c);
 	arrange(c->mon);
+}
+
+void
+printscr(const Arg *arg){
+	/*
+	 ShiftMask starts with S 				i.e. Select
+	 ControlMask starts with C 				i.e. Copy to clipboard
+	 Mod4Mask in WinKey, starts with W 		i.e. current window
+	*/
+
+	char maim[128] = "maim";
+	char *bash[] = {"/bin/bash", "-c", maim, NULL };
+
+	if (arg->ui & ShiftMask)
+		strcat(maim, " -s");
+
+	if (arg->ui & Mod4Mask)
+		strcat(maim, " -i $(xdotool getactivewindow)");
+
+	if (arg->ui & ControlMask)
+		strcat(maim, " | xclip -selection clipboard -t image/png");
+	else
+		strcat(maim, " ~/Pictures/screenshots/$(date +%s).jpg");
+
+	const Arg sbash = {.v = bash};
+	spawn(&sbash);
 }
 
 int

@@ -78,3 +78,10 @@ static Key keys[] = {
 	{ 0     ,			XF86XK_MonBrightnessUp  ,			spawn ,			{.v = light_up}}     ,
 	{ 0     ,			XF86XK_MonBrightnessDown,			spawn ,			{.v = light_down}}   ,
 };      
+	{ 0                    , XK_Print                , printscr , {.ui = 0}}                              ,
+	{ ControlMask          , XK_Print, printscr , {.ui = ControlMask}}                    ,
+	{ ShiftMask            , XK_Print, printscr , {.ui = ShiftMask}}                      ,
+	{ ControlMask|ShiftMask, XK_Print, printscr , {.ui = ControlMask|ShiftMask}}          ,
+	{ WINKEY               , XK_Print, printscr , {.ui = WINKEY}}                         ,
+	{ WINKEY|ControlMask   , XK_Print, printscr , {.ui = WINKEY|ShiftMask|ControlMask}}   ,
+};
