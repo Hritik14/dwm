@@ -32,6 +32,9 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "discord",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Signal",   "signal",       NULL,       1 << 8,       0,           -1 },
+	{ "weechat",  "termite",       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -77,4 +80,12 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+};
+
+
+static const char *const autostart[] = {
+	"/usr/bin/signal-desktop", NULL,
+	"/usr/bin/discord", NULL,
+	"/usr/bin/termite", "-e", "/usr/bin/weechat", "--class", "weechat", NULL,
+	NULL /* terminate */
 };
