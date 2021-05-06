@@ -71,6 +71,8 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ControlMask,             XK_BackSpace,      quit,           {0} },
+	{ MODKEY,                       XK_o,      winview,        {0} },
+
 
 	// custom keybindings
 	{ WINKEY,			XK_l                    ,			spawn ,			{.v = lock}}         ,
