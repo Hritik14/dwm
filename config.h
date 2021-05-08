@@ -56,6 +56,7 @@ static const Layout layouts[] = {
  	{ "[@]",      spiral },
  	{ "[\\]",      dwindle }, 
 	{ "###",      horizgrid },
+	{ "-|=",      gaplessgrid },
 };
 
 /* key definitions */
