@@ -28,7 +28,8 @@ static const char
 	*dunst_c[] = {"/usr/bin/dunstctl","close",NULL},
 	*dunst_ca[] = {"/usr/bin/dunstctl","close-all", NULL},
 	*dunst_pop[] = {"/usr/bin/dunstctl","history-pop", NULL},
-	*dunst_toggle[] = {"/usr/bin/dunstctl","set-paused","toggle", NULL};
+	*dunst_toggle[] = {"/usr/bin/dunstctl","set-paused","toggle", NULL},
+	*wmctrl_menu[] = {"/usr/bin/rofi", "-show", "window", "-display-window", "Window: "};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -98,6 +99,7 @@ static Key keys[] = {
 	{ ControlMask|ShiftMask, XK_Print, printscr , {.ui = ControlMask|ShiftMask}}          ,
 	{ WINKEY               , XK_Print, printscr , {.ui = WINKEY}}                         ,
 	{ WINKEY|ControlMask   , XK_Print, printscr , {.ui = WINKEY|ShiftMask|ControlMask}}   ,
+	{ MODKEY               , XK_grave,    					spawn,           {.v = wmctrl_menu} },
 		//dunst
 	{ ControlMask       , XK_1    , spawn, {.v=dunst_a0} }    ,
 	{ ControlMask       , XK_2    , spawn, {.v=dunst_a1} }    ,
