@@ -6,7 +6,7 @@ static const char
 	*app_launcher[] = { "application-launcher", NULL },
 	*termcmd[]  = { "termite", NULL },
 	*lock[] = {"lock.sh", NULL},
-	*filemanager[] = {"nautilus", NULL},
+	*filemanager[] = {"dolphin", NULL},
 	*special_chars[] = {"special_characters.sh", NULL},
 	*screencast[] = {"toggle.sh","ffmpeg_screencast", NULL},
 	*clipbox[] = {"clipbox", NULL},
