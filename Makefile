@@ -48,4 +48,7 @@ uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/dwm\
 		${DESTDIR}${MANPREFIX}/man1/dwm.1
 
+deps-ubuntu:
+	sudo apt-get install -y libxinerama-dev libxft-dev libx11-dev tcc
+
 .PHONY: all options clean dist install uninstall
