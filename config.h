@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "discord",  NULL,       NULL,       1 << 8,       0,           -1 },
 	{ "Signal",   "signal",       NULL,       1 << 8,       0,           -1 },
 	{ "weechat",  "termite",       NULL,       1 << 8,       0,           -1 },
+	{ "processing-app-Base",  "sun-awt-X11-XFramePeer",       NULL,       0,       0,           -1 },
 };
 
 /* layout(s) */
