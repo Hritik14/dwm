@@ -34,5 +34,8 @@ LDFLAGS  = ${LIBS}
 #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
 #LDFLAGS = ${LIBS}
 
+# Archlinux Arm
+LDFLAGS = ${LIBS} -fPIC
+
 # compiler and linker
 CC = cc

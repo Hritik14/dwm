@@ -16,7 +16,7 @@ the /usr/local namespace by default).
 Afterwards enter the following command to build and install dwm (if
 necessary as root):
 
-	make deps-ubuntu
+	make deps-ubuntu or make deps-archlinux
     make clean install
 
 

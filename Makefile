@@ -51,4 +51,7 @@ uninstall:
 deps-ubuntu:
 	sudo apt-get install -y libxinerama-dev libxft-dev libx11-dev tcc
 
+deps-archlinux:
+	pacman -S --noconfirm libx11 libxft libxinerama gcc freetype2
+
 .PHONY: all options clean dist install uninstall
