@@ -94,8 +94,8 @@ static Button buttons[] = {
 
 
 static const char *const autostart[] = {
-	"/usr/bin/signal-desktop", NULL,
-	"/usr/bin/discord", NULL,
-	"/usr/bin/termite", "-e", "/usr/bin/weechat", "--class", "weechat", NULL,
+//	"/usr/bin/signal-desktop", NULL,
+//	"/usr/bin/discord", NULL,
+//	"/usr/bin/termite", "-e", "/usr/bin/weechat", "--class", "weechat", NULL,
 	NULL /* terminate */
 };

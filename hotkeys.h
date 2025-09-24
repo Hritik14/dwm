@@ -4,7 +4,7 @@ static const char scratchpadname[] = "notebook";
 /* commands */
 static const char
 	*app_launcher[] = { "application-launcher", NULL },
-	*termcmd[]  = { "termite", NULL },
+	*termcmd[]  = { "/bin/st", "-e", "/bin/tmux", NULL },
 	*lock[] = {"lock.sh", NULL},
 	*filemanager[] = {"dolphin", NULL},
 	*special_chars[] = {"special_characters.sh", NULL},
@@ -18,7 +18,7 @@ static const char
 	*vol_toggle[] = {"volume", "toggle", NULL},
 	*light_up[] = {"/usr/bin/light", "-A", "5", NULL},
 	*light_down[] = {"/usr/bin/light", "-U", "5", NULL},
-	*scratchpadcmd[] = { "termite", "-t", scratchpadname, "-e", "tmux", NULL };
+	*scratchpadcmd[] = { "/bin/st", "-t", scratchpadname, "-e", "/bin/tmux", NULL };
 
 // dunst
 static const char
